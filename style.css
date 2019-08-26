@@ -78,3 +78,20 @@ body {
     color: var(--code-text-color);
     background-color: var(--code-background-color);
 }
+
+.article .references {
+    padding: 1em 0;
+    border-top: 1px solid var(--article-border-color);
+}
+
+.article .references .references--header {
+    padding-bottom: 1em;
+}
+
+.article .references .references--list {
+    padding-left: 1em;
+}
+
+.article .references .references--list a {
+    text-decoration: none;
+}
