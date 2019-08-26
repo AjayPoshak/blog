@@ -4,6 +4,7 @@
     --header-text-color : #fff;
     --code-background-color: #f7f7f9;
     --code-text-color: #bd4147;
+    --article-border-color: #999999;
 }
 
 * {
@@ -51,7 +52,7 @@ body {
 
 .article .article-header {
     padding: 1em 0;
-    border-bottom: 1px solid #999999;
+    border-bottom: 1px solid var(--article-border-color);
 }
 
 .article .article-header .article-header__text {
