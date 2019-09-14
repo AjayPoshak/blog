@@ -2,12 +2,13 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Personal blog of Ajay Poshak",
-  "main": "build.js",
+  "main": "functions/index.js",
   "dependencies": {
     "express": "^4.17.1",
     "highlight.js": "^9.15.10",
     "js-yaml": "^3.13.1",
     "markdown-it": "^10.0.0",
+    "netlify-lambda": "^1.6.3",
     "nunjucks": "^3.2.0",
     "serverless-http": "^2.3.0"
   },
@@ -15,6 +16,7 @@
     "watch": "^1.0.2"
   },
   "scripts": {
+    "build:serverless": "netlify-lambda build server",
     "build": "node build.js",
     "start": "node server.js",
     "start:dev": "nodemon server.js",

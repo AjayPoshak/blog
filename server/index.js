@@ -1,14 +1,14 @@
 const path = require("path");
 const express = require("express");
 const serverless = require('serverless-http');
-const { articleHelpers } = require("./utils/articleHelpers.js");
+const { articleHelpers } = require("../utils/articleHelpers.js");
 
 const app = new express();
 const router = express.Router();
 const port = process.env.PORT || 3005;
 
-const articleFolderPath = path.join(__dirname, "/articles");
-const htmlAssetsFolderPath = path.join(__dirname, "/.assets");
+const articleFolderPath = path.join(__dirname, "../articles");
+const htmlAssetsFolderPath = path.join(__dirname, "../.assets");
 
 const articleUtils = articleHelpers(articleFolderPath);
 
