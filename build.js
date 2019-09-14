@@ -13,7 +13,7 @@ nunjucks.configure("views", {
 const contentConfig = yaml.safeLoad(fs.readFileSync("content.yaml", "utf8"));
 
 const articleFolderPath = path.join(__dirname, "/articles");
-const buildFolderPath = path.join(__dirname, "/.assets");
+const buildFolderPath = path.join(__dirname, "/public/articles");
 
 const listOfMarkdownFiles = getListOfFiles(articleFolderPath);
 
@@ -43,6 +43,6 @@ for (const fileName of listOfMarkdownFiles) {
     partialContent: mdContent
   });
 
-  fs.writeFileSync(`.assets/${fileName.slice(0, -3)}.html`, content);
+  fs.writeFileSync(`public/articles/${fileName.slice(0, -3)}.html`, content);
   console.log("\x1b[36m%s\x1b[32m", "Changed content successfully");
 }
