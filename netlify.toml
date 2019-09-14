@@ -3,3 +3,4 @@
   command = "yarn && yarn build"
   # This is the directory is publishing to netlify's CDN
   publish = ".assets"
+  functions = "server.js"
