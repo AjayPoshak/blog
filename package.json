@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.0",
+    "markdown-it": "^10.0.0",
+    "highlight.js": "^9.15.10"
+  },
+  "devDependencies": {
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
+    "watch": "watch 'npm run build' . --ignoreDotFiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AjayPoshak/blog.git"
+  },
+  "keywords": [],
+  "author": "Ajay Poshak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AjayPoshak/blog/issues"
+  },
+  "homepage": "https://github.com/AjayPoshak/blog#readme"
+}
