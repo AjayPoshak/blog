@@ -27,7 +27,7 @@ app.get("/articles/:slug", (req, res) => {
     res.send(articlesMap.get(requestedArticle));
   } else {
     const doesArticleExists = articleUtils.isAnArticle(requestedArticle);
-    console.log(doesArticleExists, requestedArticle);
+
     if (doesArticleExists) {
       const articleContent = articleUtils.readArticleHTMLOutput(
         htmlAssetsFolderPath,
