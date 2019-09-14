@@ -17,6 +17,10 @@ const buildFolderPath = path.join(__dirname, "/.assets");
 
 const listOfMarkdownFiles = getListOfFiles(articleFolderPath);
 
+if(!fs.existsSync(buildFolderPath)) {
+  fs.mkdirSync(buildFolderPath)
+}
+
 cleanUpDirectory(buildFolderPath);
 
 for (const fileName of listOfMarkdownFiles) {
