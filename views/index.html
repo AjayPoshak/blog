@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         {% include 'head.html' %}
+        <meta name="Description" content="{{excerpt}}">
     </head>
     <body>
         <nav class="header">
@@ -20,8 +21,8 @@
         </nav>
         <section class="article">
             <header class="article-header">
-                <h2 class="article-header__text">Lazy Evaluation of lower priority tasks</h2>
-                <time class="article-header__time" datetime="24-08-2019">August 24, 2019</time>
+                <h2 class="article-header__text">{{title}}</h2>
+                <time class="article-header__time" datetime="{{datetime}}">{{publishedDate}}</time>
             </header>
             <article class="content">
                 {{ partialContent | safe }}
