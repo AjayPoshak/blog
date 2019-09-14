@@ -3,7 +3,7 @@ const express = require("express");
 const { articleHelpers } = require("./utils/articleHelpers.js");
 
 const app = new express();
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 const articleFolderPath = path.join(__dirname, "/articles");
 const htmlAssetsFolderPath = path.join(__dirname, "/.assets");
