@@ -1,0 +1,5 @@
+[build]
+  # This will be run the site build
+  command = "yarn && yarn build"
+  functions = "functions"
+  publish = "public"
