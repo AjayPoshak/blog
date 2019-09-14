@@ -4,6 +4,7 @@ const serverless = require('serverless-http');
 const { articleHelpers } = require("./utils/articleHelpers.js");
 
 const app = new express();
+const router = express.Router();
 const port = process.env.PORT || 3005;
 
 const articleFolderPath = path.join(__dirname, "/articles");
@@ -15,11 +16,11 @@ const articlesMap = new Map();
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send('Yayy')
 })
 
-app.get("/articles/:slug", (req, res) => {
+router.get("/articles/:slug", (req, res) => {
   res.set("Content-Type", "text/html");
   /**
    * Check if requested `article` already exists
@@ -44,6 +45,9 @@ app.get("/articles/:slug", (req, res) => {
     res.send(`404 page`);
   }
 });
+
+app.use('/.netlify/functions/server', router);  // path must route to lambda
+// app.use('/', router)
 
 // app.listen(port, () => {
 //   console.log(`app listening on port: ${port}`);
