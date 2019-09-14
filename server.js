@@ -12,7 +12,7 @@ const articleUtils = articleHelpers(articleFolderPath);
 
 const articlesMap = new Map();
 
-app.use(express.static('public'))
+app.use(express.static("public"));
 
 app.get("/articles/:slug", (req, res) => {
   res.set("Content-Type", "text/html");
