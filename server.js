@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const serverless = require('serverless-http');
 const { articleHelpers } = require("./utils/articleHelpers.js");
 
 const app = new express();
@@ -13,6 +14,10 @@ const articleUtils = articleHelpers(articleFolderPath);
 const articlesMap = new Map();
 
 app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.send('Yayy')
+})
 
 app.get("/articles/:slug", (req, res) => {
   res.set("Content-Type", "text/html");
@@ -40,6 +45,9 @@ app.get("/articles/:slug", (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`app listening on port: ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`app listening on port: ${port}`);
+// });
+
+module.exports = app;
+module.exports.handler = serverless(app);
