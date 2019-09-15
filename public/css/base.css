@@ -1,0 +1,19 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --primary-color: #2188b6;
+    --header-text-color : #fff;
+    --code-background-color: #f7f7f9;
+    --code-text-color: #bd4147;
+    --article-border-color: #999999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+}
