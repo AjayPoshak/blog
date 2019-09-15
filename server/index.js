@@ -8,7 +8,7 @@ const router = express.Router();
 const port = process.env.PORT || 3005;
 
 const articleFolderPath = path.join(__dirname, "../articles");
-const htmlAssetsFolderPath = path.join(__dirname, "../.assets");
+const htmlAssetsFolderPath = path.join(__dirname, "../public/articles");
 
 const articleUtils = articleHelpers(articleFolderPath);
 
