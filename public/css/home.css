@@ -26,6 +26,11 @@ body {
     justify-content: space-between;
 }
 
+.home-container .intro .social-icons {
+    width: 25px;
+    height: 25px;
+}
+
 .home-container .intro .profile-picture {
     border-radius: 50%;
     padding-right: 4%;
@@ -60,11 +65,9 @@ body {
 .home-container .side-projects .card {
     margin: 1em;
     display: flex;
-    /* text-align: center; */
     border-radius: 5px;
     flex-direction: column;
     background-color: #fff;
-    box-shadow: 0px 5px 20px #555;
 }
 
 .home-container .side-projects .card .tags {
