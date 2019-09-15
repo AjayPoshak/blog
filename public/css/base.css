@@ -1,0 +1,59 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --primary-color: #2188b6;
+    --header-text-color : #fff;
+    --code-background-color: #f7f7f9;
+    --code-text-color: #bd4147;
+    --article-border-color: #999999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.header {
+    display: flex;
+    padding: 1.75em;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--header-text-color);
+    background-color: var(--primary-color);
+}
+
+.header .header__name {
+    font-size: 20px;
+}
+
+.header .header__company {
+    font-size: 16px;
+}
+
+.header .social-links img {
+    height: 25px;
+    width: 25px;
+}
+
+.header .social-links a {
+    text-decoration: none;
+}
+
+.sub-header {
+    background-color: var(--primary-color);
+    opacity: 0.8;
+    padding: 1em 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sub-header .__link {
+    padding: 0 0.5em;
+    color: var(--header-text-color);
+    text-decoration: none;
+}

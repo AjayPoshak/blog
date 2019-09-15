@@ -19,7 +19,7 @@
     "build:serverless": "netlify-lambda build server",
     "build": "node build.js & yarn build:serverless",
     "start": "node server.js",
-    "start:dev": "nodemon server.js",
+    "start:dev": "nodemon server/index.js",
     "watch": "watch 'npm run build' . --ignoreDotFiles"
   },
   "repository": {
