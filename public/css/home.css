@@ -1,0 +1,90 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-heading {
+    font-size: 24px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #333
+}
+
+.home-container {
+    padding: 1em;
+    max-width: 42em;
+    margin: 0 auto;
+}
+
+.home-container .intro {
+    display: flex;
+    flex: 0 0 25%;
+    margin-bottom: 2em;
+    justify-content: space-between;
+}
+
+.home-container .intro .profile-picture {
+    border-radius: 50%;
+    padding-right: 4%;
+}
+
+.home-container .intro .__text {
+    align-self: center;
+}
+
+.home-container .projects {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+}
+
+.home-container .projects .__header {
+    font-weight: normal;
+    font-size: 20px;
+    padding-top: 0.5em;
+}
+
+.home-container .projects li {
+    /* padding-left: 1em; */
+    line-height: 2em;
+    margin: 1em 2em;
+}
+
+.home-container .side-projects {
+    margin: 2em 0;
+}
+
+.home-container .side-projects .card {
+    margin: 1em;
+    display: flex;
+    /* text-align: center; */
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px #555;
+}
+
+.home-container .side-projects .card .tags {
+    padding: 5px 0;
+}
+
+.home-container .side-projects .card .tags span {
+    color: #078cc5;
+}
+
+.home-container .side-projects .card .__details {
+    padding: 1em;
+}
+
+.home-container .open-source-contributions .__details {
+    padding: 1em;
+}
+
+.home-container .open-source-contributions .__header {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 8px;
+}
