@@ -1,31 +1,28 @@
-Browsers are single threaded which means that they can do single thing at a time.
+Browsers run on single thread which means that they can do single thing at a time.
 You may need to prioritize among different tasks to run more important tasks
 first and defer the execution of other non-important tasks.
                     
 For example, while scrolling a listing page, scroll event fires.  This event
-adds some DOM elements to the list to achieve infinite scroll effect. But at
+adds some DOM elements to the list to achieve the infinite scroll effect. But at
 the same time, an analytics event is also fired, thus eating up the precious time
-from the main thread, thus delaying the code to append DOM elements in the list.
+in the main thread, thus delaying the code to append DOM elements in the list.
 
-From a long time, this can be achieved via `setTimeout`.  Using setTimeout, non-important tasks can be pushed into callback queue. In callback queue, after it completes the `delay` time, the Event Loop pushes it into call stack whenever it finds call stack empty.  Problem with this approach is that we can't have the fine grained control over when the task would be executed.
+This can be achieved via `setTimeout`.  Using setTimeout, non-important tasks can be pushed into callback queue. In callback queue, after it completes the `delay` time, the Event Loop pushes it into call stack whenever it finds call stack empty.  Problem with this approach is that we can't have the fine grained control over when the task would be executed.
 
 Recently an API called `requestIdleCallback` has been added that tells when the main thread would be idle.  So  instead of relying on the interplay of callback queue and callstack, we can reliabily defer the execution of non-essential tasks.
 
 One of such use cases are analytics.  Analytics while being extremely useful
-to provide valuable insights into user behaviour, at the same time is not 
-valuable to user experience.  So it makes a good case of lazy execution of code.
+to provide valuable insights into user behaviour, at the same time does not 
+contribute towards user experience.  So it makes a good case of lazy execution of code.
 
-Now we want to push execution of analytics calls to `requestIdleCallback` so it
+We should push execution of analytics calls to `requestIdleCallback` so it
 won't block the execution of essential tasks.
 
 But there might be some edge cases around this approach.  One, what if
 user closes the browser tab or the browser itself before the main thread becomes
-idle.  Surely, we don't want to loose those events.
-
-Another, what if main thread never becomes idle. So we need some
+idle. Another, what if main thread never becomes idle. So we need some
 sort of guarantee that we won't miss the analytics events in case of any of these
 edge cases occur.
-
 
 Both of the above cases can be handled by building a wrapper around `requestIdleCallback`
 that guarantees that these events would be executed. That wrapper could use the `beforeunload`
@@ -114,7 +111,7 @@ eventsQueue.push(pageViewEvent)
 This is one the examples of the wonders requestIdleCallback can do.
 Deferring the execution of analytics code is one of the use cases of rIC. 
 Another cases might be prefetching the API data for the next page, or downloading
-the dynamically loaded assets even before user interacts with them.
+the dynamically loaded assets before user interacts with them.
 
 ## References:
 [Cooperative Scheduling of Background Tasks](https://www.w3.org/TR/requestidlecallback/)
