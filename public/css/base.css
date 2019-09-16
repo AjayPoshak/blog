@@ -47,7 +47,7 @@ body {
 .sub-header {
     background-color: var(--primary-color);
     opacity: 0.8;
-    padding: 1em 0;
+    padding: 1em 1.75em;
     display: flex;
     justify-content: flex-end;
 }
