@@ -1,3 +1,11 @@
+ol, ul {
+    padding-left: 2em;
+}
+
+img {
+    max-width: 100%;
+}
+
 .header {
     display: flex;
     padding: 1.75em;
