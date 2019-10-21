@@ -1,0 +1,29 @@
+.articles-list {
+    padding: 1em;
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 4em 1em 1em 1em;
+}
+
+.articles-list .articles--snippet {
+    padding-bottom: 3em;
+}
+
+.articles-list .articles__header {
+    font-size: 24px;
+    font-weight: normal;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.articles-list .articles__link {
+    text-decoration: none;
+    color: #000;
+}
+.articles-list .articles__link:hover, .articles__link:active{
+    color: #3d8f66;
+}
+
+.articles__text {
+    padding-top: 0.5rem;
+}
