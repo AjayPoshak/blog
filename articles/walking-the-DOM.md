@@ -1,3 +1,7 @@
+Document Object Model (DOM) is the HTML structure of the page.  Traversing the DOM comes
+handy in cases such as to access the last element of a carousel or to extract all text
+content from a page.
+
 ## Let's understand DOM first
 All operations in DOM start with document object. It is the entry point of DOM.
 

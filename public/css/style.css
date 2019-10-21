@@ -6,31 +6,6 @@ img {
     max-width: 100%;
 }
 
-.header {
-    display: flex;
-    padding: 1.75em;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--header-text-color);
-    background-color: var(--primary-color);
-}
-
-.header .header__name {
-    font-size: 20px;
-}
-
-.header .header__company {
-    font-size: 16px;
-}
-
-.header .social-links img {
-    height: 25px;
-    width: 25px;
-}
-
-.header .social-links a {
-    text-decoration: none;
-}
 
 .article {
     max-width: 40em;
