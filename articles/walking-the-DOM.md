@@ -1,3 +1,6 @@
+Document Object Modal (DOM) contains HTML structure of the page. This structure comes handy
+in many cases such as to retrieve specific information or to access a particular node.
+
 ## Let's understand DOM first
 All operations in DOM start with document object. It is the entry point of DOM.
 
