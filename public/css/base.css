@@ -29,6 +29,7 @@ body {
 
 .header .header__name {
     font-size: 20px;
+    font-weight: normal;
 }
 
 .header .header__company {
