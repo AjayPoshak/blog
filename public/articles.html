@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ajay Poshak's blog</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="/css/base.css" rel="stylesheet" />
+        <link href="/css/home.css" rel="stylesheet" />
+        <link href="/css/articles-list.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav>
+            <article class="header">
+                <section>
+                    <h1 class="header__name">Ajay Poshak</h1>
+                </section>
+                <section class="social-links">
+                    <a href="https://twitter.com/poshakajay">
+                        <img src="../icons/Twitter_Social_Icon_Circle_White.svg" alt="twitter" />
+                    </a>
+                    <a href="https://github.com/ajayposhak">
+                        <img src="../icons/GitHub-Mark-Light-64px.png" alt="github" />
+                    </a>
+                </section>
+            </article>
+            <article class="sub-header">
+                <a class="__link" href='/'>HOME</a>
+                <a class="__link" href='/articles/lazy-evaluation-of-low-priority-tasks'>ARTICLES</a>
+            </article>
+        </nav>
+        <section class="articles-list">
+            <article class="articles--snippet">
+                <h2 class="articles__header">
+                    <a class="articles__link" href="/articles/lazy-evaluation-of-low-priority-tasks">Lazy evaluation of low-priority tasks</a>
+                </h2>
+                <p class="articles__text">Browsers run on single thread which means that they can do single thing at a time.
+                    You may need to prioritize among different tasks to run more important tasks
+                    first and ...</p>
+            </article>
+            <article class="articles--snippet">
+                <h2 class="articles__header">
+                    <a class="articles__link" href="/articles/walking-the-DOM">Walking the DOM</a>
+                </h2>
+                <p class="articles__text">All operations in DOM start with document object. It is the entry point of DOM.
+                    Every thing in DOM can be classified as node. And node can be ...
+                </p>
+            </article>
+        </section>
+    </body>
+</html>
