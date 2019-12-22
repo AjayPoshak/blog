@@ -13,11 +13,9 @@
     font-size: 24px;
     font-weight: normal;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #333;
 }
 
 .articles-list .articles__link {
-    text-decoration: none;
     color: #000;
 }
 .articles-list .articles__link:hover, .articles__link:active{
