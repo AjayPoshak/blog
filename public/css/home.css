@@ -23,12 +23,16 @@ body {
 .home-container .intro {
     display: flex;
     margin-bottom: 2em;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .home-container .intro .social-icons {
     width: 25px;
     height: 25px;
+}
+
+.home-container .intro .picture-container {
+    width: 250px;
 }
 
 .home-container .intro .profile-picture {
