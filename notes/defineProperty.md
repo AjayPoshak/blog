@@ -26,7 +26,7 @@ const obj = Object.create(null)
 It freezes Object.prototype upfront.
 
 ## Tip:
-Do NOT refer the property being set, in the setter otherwise it would generate the `too much recursion` error.
+Do NOT refer the property being get, in the getter otherwise it would generate the `too much recursion` error.
 
 ```js
 const obj = {}
