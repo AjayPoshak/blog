@@ -1,3 +1,5 @@
+## Object.defineProperty
+
 Object.defineProperty can either be a data descriptor or the accessor descriptor.
 
 Data descriptors are following:
@@ -15,3 +17,25 @@ configurable → It also controls if that property can be deleted from that obje
 then that prop can’t be deleted.
 
 If a descriptor has both, value or writable AND get or set, then an exception is thrown.
+
+## Tip:
+To make sure that an object has no inhertied properties, use
+```js
+const obj = Object.create(null)
+```
+It freezes Object.prototype upfront.
+
+## Tip:
+Do NOT refer the property being set, in the setter otherwise it would generate the `too much recursion` error.
+
+```js
+const obj = {}
+Object.defineProperty(obj, 'a', {
+  get() {
+    this.a // it would recursively call getter on a, which would call getter on a
+  },
+  set(newValue) {
+    console.log('newValue ', newValue)
+  }
+})
+```
