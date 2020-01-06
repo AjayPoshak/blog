@@ -39,3 +39,6 @@ Object.defineProperty(obj, 'a', {
   }
 })
 ```
+
+## Emulating Object.freeze
+If configurable, and writable is set to false on all props of an object, then that object is essentially frozen, much like the Object.freeze.
