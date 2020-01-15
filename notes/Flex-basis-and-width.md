@@ -4,10 +4,10 @@
 When `flex-direction` is `row`, then it is the `width`, whereas if `flex-direction` is `column` then it is treated as `height`.
 
 2. If an element has both flex-basis and width applied to it, and `flex-direction` is `row`, then flex-basis would get priority
-over width.
+over `width`.
 
-3. If an element has `flex-basis` set to `50px`, and `min-width` set to `100px`, then still that element would be `50px` wide. 
-It means that flex-basis would get precedence over `min-width` as well.
+3. If an element has `flex-basis` set to `50px`, and `min-width` set to `100px`, then still that element would be `100px` wide. 
+It means that `min-width` would get precedence over `flex-basis`.
 
 4. `flex-basis` doesn't apply to flex-container element.
 
