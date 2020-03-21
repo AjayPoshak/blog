@@ -20,6 +20,25 @@ body {
     margin: 0 auto;
 }
 
+.name-container {
+    display: flex;
+    margin: 2em 0;
+    justify-content: center;
+}
+
+.name-container .__name {
+    display: inline-block;
+    width: 220px;
+}
+
+.__bio {
+    margin: 2em 0;
+}
+
+.__bio article, .__bio article li {
+    margin: 1em;
+}
+
 .home-container .intro {
     display: flex;
     margin-bottom: 2em;
