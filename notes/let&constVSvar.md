@@ -22,3 +22,13 @@
     console.log(window.a) //21
 
 ```
+- Every loop is a new scope instance. Everytime execution enters a scope, everything resets. `value` is created new in every exceution.
+```js
+var keepGoing = true;
+while (keepGoing) {
+    let value = Math.random();
+    if (value > 0.5) {
+        keepGoing = false;
+    }
+}
+```
