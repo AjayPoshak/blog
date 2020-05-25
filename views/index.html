@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% include 'head.html' %}
-        <meta name="Description" content="{{excerpt}}">
-    </head>
-    <body>
-        <nav>
-            <article class="header">
-                <section>
-                    <h1 class="header__name">Ajay Poshak</h1>
-                </section>
-                <section class="social-links">
-                    <a href="https://twitter.com/poshakajay">
-                        <img src="../icons/Twitter_Social_Icon_Circle_White.svg" alt="twitter" />
-                    </a>
-                    <a href="https://github.com/ajayposhak">
-                        <img src="../icons/GitHub-Mark-Light-64px.png" alt="github" />
-                    </a>
-                </section>
-            </article>
-            <article class="sub-header">
-                <a class="__link" href='/'>HOME</a>
-                <a class="__link" href='/articles.html'>ARTICLES</a>
-            </article>
-        </nav>
-        <section class="article">
-            <header class="article-header">
-                <h2 class="article-header__text">{{title}}</h2>
-                <time class="article-header__time" datetime="{{datetime}}">{{publishedDate}}</time>
-            </header>
-            <article class="content">
-                {{ partialContent | safe }}
-            </article>
+  <head>
+    {% include 'head.html' %}
+    <meta name="Description" content="{{excerpt}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta
+      property="og:description"
+      content="{{excerpt}}"
+    />
+    <meta
+      property="og:image"
+      content="https://avatars3.githubusercontent.com/u/7375457?s=460&v=4"
+    />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta
+      name="twitter:description"
+      content="{{excerpt}}"
+    />
+    <meta
+      name="twitter:image"
+      content="https://avatars3.githubusercontent.com/u/7375457?s=460&v=4"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <nav>
+      <article class="header">
+        <section>
+          <h1 class="header__name">Ajay Poshak</h1>
         </section>
-    </body>
+        <section class="social-links">
+          <a href="https://twitter.com/poshakajay">
+            <img
+              src="../icons/Twitter_Social_Icon_Circle_White.svg"
+              alt="twitter"
+            />
+          </a>
+          <a href="https://github.com/ajayposhak">
+            <img src="../icons/GitHub-Mark-Light-64px.png" alt="github" />
+          </a>
+        </section>
+      </article>
+      <article class="sub-header">
+        <a class="__link" href="/">HOME</a>
+        <a class="__link" href="/articles.html">ARTICLES</a>
+      </article>
+    </nav>
+    <section class="article">
+      <header class="article-header">
+        <h2 class="article-header__text">{{title}}</h2>
+        <time class="article-header__time" datetime="{{datetime}}"
+          >{{publishedDate}}</time
+        >
+      </header>
+      <article class="content">
+        {{ partialContent | safe }}
+      </article>
+    </section>
+  </body>
 </html>
