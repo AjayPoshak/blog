@@ -23,10 +23,12 @@ async function generateScreenShots(config) {
   try {
     const screenshotsDirPath = path.join(
       __dirname,
-      "./public/articles/screenshots"
+      "./public/screenshots"
     );
+    if(!fs.existsSync(screenshotsDirPath)) {
+      fs.mkdirSync(screenshotsDirPath)
+    }
     for (const fileMeta of config.articles) {
-      console.log(fileMeta);
       const { filename } = fileMeta;
       const fileNameWithoutExtension = filename.slice(0, filename.length - 3);
       const htmlFileName = fileNameWithoutExtension.concat(".html");
