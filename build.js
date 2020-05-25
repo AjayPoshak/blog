@@ -35,12 +35,13 @@ async function runBuild() {
       "utf-8"
     );
 
-    const { title, publishedDate, datetime, excerpt } = fileConfig;
+    const { title, publishedDate, datetime, excerpt, screenshot } = fileConfig;
     const mdContent = markdown(fileContent);
     const content = nunjucks.render("index.html", {
       title,
       excerpt,
       datetime,
+      screenshot,
       publishedDate,
       partialContent: mdContent,
     });
