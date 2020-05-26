@@ -30,42 +30,17 @@ Correct program design would have been
 
 Lets move to a more concrete example. Lets say there is an object called `platform` which has properties like app code and app version. Now someone changed it to a string containing only app code, before the redux store is hydrated.
 
-```js
-    // createStore.js
-    export const createStore(state) {
-        // ...
-        // ...
-        const { platform } = state.cookies
-        state.cookies.platform = platform.appCode
-    }
-```
+![fourth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-3.png)
 
 In a certain React Component, it is consumed like this
 
-```js
-    const ShowHeader = () => {
-        React.useEffect(() => {
-            const { platform } = parseCookies(state.cookies)
-            if(platform === 'mobile') {
-                // Do something about mobile view
-            }
-        }, [state])
-    }
-```
+![fifth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-4.png)
 
 This entire code works fine. Because `useEffect` makes sure that it runs on client side only.
 Some mischievous soul came in, and changed the component code like this
 
-```js
-    const ShowHeader = () => {
-        // React.useEffect(() => {
-            const { platform } = parseCookies(state.cookies)
-            if(platform === 'mobile') {
-                // Do something about mobile view
-            }
-        // }, [])
-    }
-```
+![sixth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-5.png)
+
 
 The safeguard of `useEffect` has been removed. Now this component is rendered on client and server both.
 But there is a slight problem, that `platform` key is still a object on server. hence this component breaks in an unimaginable way.
