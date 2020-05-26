@@ -9,24 +9,11 @@ And after that only you would be able to call `playStory` and `pauseStory`.
 
 The order would be
 
-```js
-    const story = new Story()
-    story.init({ type: 'cartoon' })
-    story.play()
-    //....
-    //....
-    story.pause()
-```
+![first-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon.png)
 
 Then there came another programmer, who wanted to use the story not for cartoon characters but for space wars, a war fanatic we must say. This guy is restless, he didn't read the spec carefully. And he did this...
 
-```js
-    const story = new Story()
-    story.play()
-    //....
-    //....
-    story.pause()
-```
+![second-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-1.png)
 
 Now the story is god knows what state, then `story` object is messed for real and `play` method throws exception.
 
@@ -36,10 +23,8 @@ and the object stays in inconsistent state in between the calls.  This inconsist
 Our first program was working, because `init` was called before `play`. And second program didn't work because `init` was not called. So first program worked by incidence.  This is known as programming as co-incidence.
 
 Correct program design would have been
-```js
-    const story = new Story({ type: 'space-wars' })
-    story.play()
-```
+
+![third-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-2.png)
 
 ## Another real world example
 
