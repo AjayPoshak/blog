@@ -1,13 +1,11 @@
-Programming by co-incidence, sounds like a mouthful.  I also thought the same when I heard the term.
+Programming by co-incidence means that you're relying on accidental successes or boundary conditions.
 
-Lets say we have a class Story, that tells exotic stories about cartoon characters.
-We invoke that story using `new Story`, but the programmer decided that story needs to be initialized at first.
-So he created another method called `init`. 
+Let's say we have a class Story, that tells exotic stories about cartoon characters.
+We invoke that story using `new Story`, but first it should be initialized so there is a method called `init`. 
 
-So if you want to hear a story, invoke the creation of story object and then call the init method.
-And after that only you would be able to call `playStory` and `pauseStory`.
+So if you want to hear a story, create a story object and then call the init method.
+And then call `playStory` and `pauseStory` to play or pause story respectively.
 
-The order would be
 
 ![first-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon.png)
 
@@ -15,38 +13,44 @@ Then there came another programmer, who wanted to use the story not for cartoon 
 
 ![second-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-1.png)
 
-Now the story is god knows what state, then `story` object is messed for real and `play` method throws exception.
+Now the story is god knows what state, then `story` object is messed for real, and `play` method throws an exception.
 
 If you inspect carefully, there is a flaw in this program's design. It depends on the order of function calls,
-and the object stays in inconsistent state in between the calls.  This inconsistency is a home to a lot of bugs.
+and the object stays in an inconsistent state between the calls.  This inconsistency is a breeding ground for a lot of bugs.
 
-Our first program was working, because `init` was called before `play`. And second program didn't work because `init` was not called. So first program worked by incidence.  This is known as programming as co-incidence.
+Our first program was working, because `init` was called before `play`. And the second program didn't work because `init` was not called. So the first program worked by incidence.  This is known as programming by co-incidence.
 
 Correct program design would have been
 
 ![third-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-2.png)
 
-## Another real world example
+> Pragmatic Programmers think critically about all code, including our own. We constantly see room for improvement in our programs and our designs.
+- Pragmatic Programmer
 
-Lets move to a more concrete example. Lets say there is an object called `platform` which has properties like app code and app version. Now someone changed it to a string containing only app code, before the redux store is hydrated.
+## Another real-world example
 
-![fourth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-3.png)
+Let's move to a more concrete example. Let's say there is an object called `platform` which has properties like app code and app version. Now someone changed it to a string containing only app code before the redux store is hydrated.
+
+![fourth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-6.png)
 
 In a certain React Component, it is consumed like this
 
-![fifth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-4.png)
+![fifth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-7.png)
 
-This entire code works fine. Because `useEffect` makes sure that it runs on client side only.
-Some mischievous soul came in, and changed the component code like this
+This entire code works fine. Because `useEffect` makes sure that it runs on the client-side only.
+Some mischievous soul came in and changed the component code like this
 
-![sixth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-5.png)
+![sixth-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-8.png)
 
 
-The safeguard of `useEffect` has been removed. Now this component is rendered on client and server both.
-But there is a slight problem, that `platform` key is still a object on server. hence this component breaks in an unimaginable way.
+The safeguard of `useEffect` has been removed. Now, this component is rendered on client and server both.
+But there is a slight problem, that `platform` key is still an object on the server. Hence this component breaks in an unimaginable way.
 
-So far, we relied on the `useEffect` to guard it, so it was working fine. But the value for `platform` was in inconsistent state. It relied on the fact, that it is always accessed on client side. So when a component tried to access it on server side, it exposed the inconsistency of its shape. So far, it was just a <b>co-incidence</b> that program was working.
+So far, we relied on the `useEffect` to guard it, so it was working fine. But the value for `platform` was in an inconsistent state. It relied on the fact, that it has always been accessed on the client-side. So whenever a component tried to access it on the server side, it exposed the inconsistency of its shape. So far, it was just a **co-incidence** that program was working.
 
-This is called Programming by Co-incidence. And pragmatic programmers(term borrowed from book - "The Pragmatic Programmer") never relies on the inconsistent state of a object to make its program work.
+This is called Programming by Co-incidence. And pragmatic programmers(a term borrowed from the book - "The Pragmatic Programmer") never rely on the inconsistent state of an object to make its program work.
 
-Solution to the above mentioned issue, is to keep it either an object or a string on both client and server.
+The solution to the above-mentioned issue is to keep it either an object or a string on both client and server.
+In the end, I'll leave you with a thought that I read in the book "The Pragmatic Programmer".
+
+> As developers, we work in minefields. There are hundreds of traps just waiting to catch us each day. We should be wary of drawing false conclusions. We should avoid programming by coincidence--relying on luck and accidental successes--in favor of programming deliberately.
