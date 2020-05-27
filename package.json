@@ -11,7 +11,7 @@
     "netlify-lambda": "^1.6.3",
     "nunjucks": "^3.2.0",
     "puppeteer": "^3.1.0",
-    "serverless-http": "^2.3.0"
+    "serverless-http": "^2.3.2"
   },
   "devDependencies": {
     "watch": "^1.0.2"
