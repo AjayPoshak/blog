@@ -24,8 +24,8 @@ Correct program design would have been
 
 ![third-screenshot](https://res.cloudinary.com/ddbxa4afa/image/upload/v1590501249/blog/carbon-2.png)
 
-> Pragmatic Programmers think critically about all code, including our own. We constantly see room for improvement in our programs and our designs.
-- Pragmatic Programmer
+<blockquote><p>Pragmatic Programmers think critically about all code, including our own. We constantly see room for improvement in our programs and our designs.</p>
+- The Pragmatic Programmer</blockquote>
 
 ## Another real-world example
 
@@ -53,4 +53,4 @@ This is called Programming by Co-incidence. And pragmatic programmers(a term bor
 The solution to the above-mentioned issue is to keep it either an object or a string on both client and server.
 In the end, I'll leave you with a thought that I read in the book "The Pragmatic Programmer".
 
-> As developers, we work in minefields. There are hundreds of traps just waiting to catch us each day. We should be wary of drawing false conclusions. We should avoid programming by coincidence--relying on luck and accidental successes--in favor of programming deliberately.
+<blockquote> As developers, we work in minefields. There are hundreds of traps just waiting to catch us each day. We should be wary of drawing false conclusions. We should avoid programming by coincidence--relying on luck and accidental successes--in favor of programming deliberately.</blockquote>
