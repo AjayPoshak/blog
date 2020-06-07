@@ -1,60 +1,69 @@
 :root {
-    --font-family: sans-serif, serif;
-    --primary-color: #2188b6;
-    --header-text-color : #fff;
-    --code-background-color: #f7f7f9;
-    --code-text-color: #bd4147;
-    --article-border-color: #999999;
+  --font-family: sans-serif, serif;
+  --primary-color: #2188b6;
+  --header-text-color: #fff;
+  --code-background-color: #f7f7f9;
+  --code-text-color: #bd4147;
+  --article-border-color: #999999;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-family);
+  font-family: var(--font-family);
 }
 
 .header {
-    display: flex;
-    padding: 1.75em;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--header-text-color);
-    background-color: var(--primary-color);
+  display: flex;
+  padding: 1.75em;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--header-text-color);
+  background-color: var(--primary-color);
 }
 
 .header .header__name {
-    font-size: 22px;
-    font-weight: normal;
+  font-size: 22px;
+  font-weight: normal;
 }
 
 .header .header__company {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .header .social-links img {
-    height: 25px;
-    width: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 .header .social-links a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .sub-header {
-    background-color: var(--primary-color);
-    opacity: 0.8;
-    padding: 1em 1.75em;
-    display: flex;
-    justify-content: flex-end;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  padding: 1em 1.75em;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sub-header .__link {
-    padding: 0 0.5em;
-    color: var(--header-text-color);
-    text-decoration: none;
+  padding: 0 0.5em;
+  color: var(--header-text-color);
+  text-decoration: none;
+}
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-style: italic;
 }
