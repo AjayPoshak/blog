@@ -18,6 +18,18 @@ then that prop can’t be deleted.
 
 If a descriptor has both, value or writable AND get or set, then an exception is thrown.
 
+## Default Values:
+
+By default, values added using Object.defineProperty() are **immutable** and **NOT** enumerable. Which means that default values are:
+
+value: undefined
+
+writeable: false
+
+enumberable: false
+
+configurable: false
+
 ## Tip:
 To make sure that an object has no inhertied properties, use
 ```js
