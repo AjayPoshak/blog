@@ -63,7 +63,13 @@ blockquote {
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-left: 40px;
   margin-right: 40px;
   font-style: italic;
+  border-width: 2px;
+  border-left-style: solid;
+  padding-left: 1em;
+  border-color: #dee0e1;
+  color: #636466;
+  font-size: 17px;
+  line-height: 1.4;
 }
