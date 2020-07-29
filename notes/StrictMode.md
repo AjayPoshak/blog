@@ -13,7 +13,7 @@ function fun() {
  
  2. It will NOT resolve `this` to global scope. In non-strict mode, below program would run, and values would be initialized on `window.values`.
  
- ```
+ ```js
  "use strict"
  function Dropdown(values) {
   this.values = values
@@ -23,7 +23,7 @@ function fun() {
  
  3. Duplication function arguments
  
- ```
+ ```js
  function loadImage(src, src) {
   "use strict"
   const image = new Image()
