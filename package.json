@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "highlight.js": "^9.18.1",
-    "js-yaml": "^3.14.0",
+    "js-yaml": "^3.14.1",
     "markdown-it": "^10.0.0",
     "netlify-lambda": "^1.6.3",
     "nunjucks": "^3.2.3",
