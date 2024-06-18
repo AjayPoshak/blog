@@ -10,7 +10,7 @@
     "markdown-it": "^10.0.0",
     "netlify-lambda": "^1.6.3",
     "nunjucks": "^3.2.3",
-    "puppeteer": "^3.2.0",
+    "puppeteer": "^22.6.4",
     "serverless-http": "^2.3.2"
   },
   "devDependencies": {
