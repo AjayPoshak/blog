@@ -1,0 +1,50 @@
+.mainContainer {
+  padding-top: 2em;
+
+  ul li,
+  ol li,
+  p {
+    padding: 1em 0;
+    line-height: 1.5em;
+  }
+
+  code {
+    color: #f9a825;
+  }
+
+  ol,
+  ul {
+    padding-left: 1em;
+  }
+  img[alt="DOM Classes hierarchy"] {
+    background: #fff;
+  }
+  ul li,
+  ol li {
+    list-style-position: inside;
+  }
+
+  ol li p {
+    display: inline;
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+  ol > li {
+    list-style-type: decimal;
+  }
+
+  h2 {
+    font-size: 28px;
+    padding: 4em 0 1em 0;
+  }
+}
+
+.titleContainer {
+  padding: 2em 0;
+
+  .title {
+    font-size: 32px;
+  }
+}
