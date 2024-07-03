@@ -1,4 +1,4 @@
 [build]
   # This will be run the site build
   command = "yarn && next build"
-  publish = "public"
+  publish = ".next"
