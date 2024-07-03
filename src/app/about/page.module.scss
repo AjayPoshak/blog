@@ -1,0 +1,25 @@
+.aboutContainer {
+  margin-top: 4em;
+  .profilePicture {
+    width: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  p {
+    padding: 2em 0;
+  }
+
+  .section {
+    padding: 1em 0;
+
+    .sectionHeading {
+      font-size: 24px;
+      padding: 2em 0 1em 0;
+    }
+
+    .list li {
+      padding: 0.5em 0;
+    }
+  }
+}

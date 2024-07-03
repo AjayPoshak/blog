@@ -1,37 +1,30 @@
 {
   "name": "blog",
-  "version": "1.0.0",
-  "description": "Personal blog of Ajay Poshak",
-  "main": "functions/index.js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "express": "^4.17.1",
-    "highlight.js": "^9.18.1",
-    "js-yaml": "^3.14.0",
-    "markdown-it": "^10.0.0",
-    "netlify-lambda": "^1.6.3",
-    "nunjucks": "^3.2.3",
-    "puppeteer": "^3.2.0",
-    "serverless-http": "^2.3.2"
+    "@types/rss": "^0.0.32",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "rss": "^1.2.2",
+    "sass": "^1.77.6"
   },
   "devDependencies": {
-    "watch": "^1.0.2"
-  },
-  "scripts": {
-    "build:serverless": "netlify-lambda build server",
-    "build": "node build.js & yarn build:serverless",
-    "start": "node server.js",
-    "start:dev": "nodemon server/index.js",
-    "watch": "watch 'npm run build' . --ignoreDotFiles"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AjayPoshak/blog.git"
-  },
-  "keywords": [],
-  "author": "Ajay Poshak",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AjayPoshak/blog/issues"
-  },
-  "homepage": "https://github.com/AjayPoshak/blog#readme"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5"
+  }
 }

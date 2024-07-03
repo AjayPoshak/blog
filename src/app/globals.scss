@@ -1,0 +1,63 @@
+:root {
+  --max-width: 42em;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --background-color: #161320;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  max-width: var(--max-width);
+  font-family: var(--font-mono);
+  color: #fff;
+  padding: 1em 0;
+  margin: 0 auto;
+}
+
+a {
+  color: #fff;
+}
+
+blockquote {
+  background-color: #1e1e2e; // Slightly lighter dark background for blockquote
+  border-left: 4px solid #4a90e2; // Light Blue border to match link color
+  color: #f5f5f5; // Light text color for readability
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-style: italic;
+  quotes: "“" "”" "‘" "’";
+
+  &::before {
+    color: #f9a825;
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  &::after {
+    color: #f9a825;
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  p {
+    display: inline; // Ensures quotes wrap around text
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: rgb(119, 197, 158);
+  }
+}
