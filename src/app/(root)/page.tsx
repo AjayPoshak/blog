@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./page.module.scss";
-import { buildMetadata } from "./utils";
+import { buildMetadata } from "@/app/utils";
 import { DateTime } from "@/components/DateTime";
 
 export default function Home() {

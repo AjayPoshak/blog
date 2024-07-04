@@ -3,6 +3,17 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #999;
+
+  .profileContainer {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  .profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 }
 
 .nav {
@@ -14,5 +25,11 @@
   a {
     color: #fff;
     text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .heading {
+    display: none;
   }
 }
