@@ -23,7 +23,7 @@ export default function Home() {
               <div>
                 <Link
                   className={styles.title}
-                  href={`/${value?.fileNameWithoutExtension}`}
+                  href={`/articles/${value?.fileNameWithoutExtension}`}
                 >
                   <h2>{value?.metadata.title}</h2>
                 </Link>

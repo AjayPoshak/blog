@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import "../../app/reset.scss";
-import "../../app/globals.scss";
-import Link from "next/link";
+import "../../../app/reset.scss";
+import "../../../app/globals.scss";
 import { IBM_Plex_Sans } from "next/font/google";
 import { LayoutHeader } from "@/components/LayoutHeader";
 
