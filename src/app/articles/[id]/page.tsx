@@ -5,14 +5,14 @@ import styles from "./page.module.scss";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { notFound } from "next/navigation";
-import { extractMetadata } from "../utils";
+import { extractMetadata } from "@/app/utils";
 import { DateTime } from "@/components/DateTime";
 
 export default function Article({ params }: { params: { id: string } }) {
   let content = "";
   try {
     content = fs.readFileSync(
-      path.resolve(`src/articles/${params.id}.md`),
+      path.resolve(`src/content/${params.id}.md`),
       "utf-8",
     );
   } catch (err) {

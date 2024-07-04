@@ -75,10 +75,10 @@ function sortByDates(list: MetadataType[]) {
 }
 
 export function buildMetadata(): MetadataType[] {
-  const fileNames = fs.readdirSync(path.resolve("src/articles"));
+  const fileNames = fs.readdirSync(path.resolve("src/content"));
   const articlesMetadata = fileNames.map((file) => {
     const rawContent = fs.readFileSync(
-      path.resolve(`src/articles/${file}`),
+      path.resolve(`src/content/${file}`),
       "utf-8",
     );
     const { metadata } = extractMetadata(rawContent);
