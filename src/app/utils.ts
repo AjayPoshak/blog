@@ -14,9 +14,12 @@ function convertToObj(str: string): MetaFromMarkdown {
   // Now each pair is like ['layout: post', 'title: abcd']
   const obj: MetaFromMarkdown = { title: "", publishedAt: "" };
   pairs.forEach((pair) => {
-    const [key, value] = pair.split(":");
-    if (key?.trim().length > 0)
-      obj[key.trim() as keyof MetaFromMarkdown] = value.trim();
+    const [key, value, ...rest] = pair.split(":");
+    if (key?.trim().length > 0) {
+      obj[key.trim() as keyof MetaFromMarkdown] = rest.length
+        ? `${[value, rest].join(":")}`.trim()
+        : value.trim();
+    }
   });
   return obj;
 }
