@@ -1,5 +1,5 @@
 title: Scaling Databases: Sharding
-publishedAt: January 5, 2025
+publishedAt: February 5, 2025
 
 ---
 ## Basic Concepts
