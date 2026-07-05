@@ -1,5 +1,4 @@
 import { LayoutHeader } from "@/components/LayoutHeader";
-import { fontClassName } from "@/app/fonts";
 
 export default function AboutLayout({
   children,
@@ -7,11 +6,9 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={fontClassName}>
-      <body>
-        <LayoutHeader showProfilePicture={false} />
-        {children}
-      </body>
-    </html>
+    <>
+      <LayoutHeader showProfilePicture={false} />
+      {children}
+    </>
   );
 }

@@ -1,7 +1,5 @@
 import Link from "next/link";
 import style from "./LayoutHeader.module.scss";
-import "../../app/reset.scss";
-import "../../app/globals.scss";
 
 export function LayoutHeader({
   showProfilePicture = true,

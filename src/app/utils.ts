@@ -40,6 +40,16 @@ export function extractMetadata(str: string): {
   };
 }
 
+export function toISODate(value: string): string | undefined {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+
+export function excerpt(content: string, max = 160): string {
+  const text = content.replace(/\s+/g, " ").trim();
+  return text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
+}
+
 export function readingTime(content: string): string {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(words / 200));
