@@ -1,25 +1,34 @@
 .aboutContainer {
-  margin-top: 4em;
+  margin-top: 2.5rem;
+
   .profilePicture {
-    width: 250px;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
-    margin: 0 auto;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
   }
 
-  p {
-    padding: 2em 0;
+  > p {
+    margin: 1.25rem 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 60ch;
   }
 
   .section {
-    padding: 1em 0;
+    margin-top: 2.5rem;
 
     .sectionHeading {
-      font-size: 24px;
-      padding: 2em 0 1em 0;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
     }
 
-    .list li {
-      padding: 0.5em 0;
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
     }
   }
 }

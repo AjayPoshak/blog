@@ -1,68 +1,129 @@
 :root {
-  --max-width: 42em;
-  --border-radius: 12px;
-  // --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-  // "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-  // "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --background-color: #161320;
+  --max-width: 42rem;
+
+  // Typefaces (from next/font, with graceful fallbacks)
+  --font-sans: var(--font-body), system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-display), "Iowan Old Style", "Palatino Linotype",
+    Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  // Quiet — dark (default)
+  --bg: #0f1116;
+  --surface: #171a22;
+  --fg: #e8e9ef;
+  --muted: #8b93a4;
+  --faint: #5c6473;
+  --accent: #7aa2ff;
+  --accent-strong: #a6c1ff;
+  --rule: #232733;
+  --code-bg: #1a1d27;
+  --selection: rgba(122, 162, 255, 0.24);
+
+  color-scheme: dark light;
 }
 
-html,
+// Quiet — light (for visitors whose OS prefers light)
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbfbfc;
+    --surface: #f3f4f7;
+    --fg: #16181d;
+    --muted: #5f6675;
+    --faint: #99a0af;
+    --accent: #2f5fe0;
+    --accent-strong: #1e46b8;
+    --rule: #e6e8ee;
+    --code-bg: #f1f2f6;
+    --selection: rgba(47, 95, 224, 0.15);
+  }
+}
+
+html {
+  background-color: var(--bg);
+}
+
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
   max-width: var(--max-width);
-  color: #fff;
-  padding: 1em 0;
   margin: 0 auto;
+  padding: 1.5rem clamp(1.1rem, 5vw, 1.5rem) 5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 a {
-  color: #fff;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 blockquote {
-  background-color: #1e1e2e; // Slightly lighter dark background for blockquote
-  border-left: 4px solid #4a90e2; // Light Blue border to match link color
-  color: #f5f5f5; // Light text color for readability
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  margin: 1.75rem 0;
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-family: var(--font-serif);
   font-style: italic;
-  quotes: "“" "”" "‘" "’";
-
-  &::before {
-    color: #f9a825;
-    content: open-quote;
-    font-size: 2em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-  }
-
-  &::after {
-    color: #f9a825;
-    content: close-quote;
-    font-size: 2em;
-    line-height: 0.1em;
-    margin-left: 0.25em;
-    vertical-align: -0.4em;
-  }
+  font-size: 1.1rem;
 
   p {
-    display: inline; // Ensures quotes wrap around text
+    display: inline;
   }
 }
 
-a {
-  text-decoration: none;
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
 
-  &:hover {
-    text-decoration: underline;
-    color: rgb(119, 197, 158);
-  }
+// Inline code only — syntax-highlighted blocks live inside <pre>
+:not(pre) > code {
+  background: var(--code-bg);
+  color: var(--accent);
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+  border: 1px solid var(--rule);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+img {
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 720px) {
-  :root {
-    max-width: 90%;
+  body {
+    font-size: 0.97rem;
   }
 }

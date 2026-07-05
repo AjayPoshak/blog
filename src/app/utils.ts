@@ -40,6 +40,12 @@ export function extractMetadata(str: string): {
   };
 }
 
+export function readingTime(content: string): string {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min read`;
+}
+
 export function removeExtension(fileName: string): string {
   const dotIndex = fileName.search(/\./);
   if (dotIndex === -1) return fileName;
@@ -84,10 +90,13 @@ export function buildMetadata(): MetadataType[] {
       path.resolve(`src/content/${file}`),
       "utf-8",
     );
-    const { metadata } = extractMetadata(rawContent);
+    const { metadata, content } = extractMetadata(rawContent);
     return {
       fileName: file,
-      metadata,
+      metadata: {
+        ...metadata,
+        readingTime: readingTime(content),
+      },
       fileNameWithoutExtension: removeExtension(file),
     };
   });

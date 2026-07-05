@@ -1,51 +1,86 @@
-.mainContainer {
-  padding-top: 2em;
+.titleContainer {
+  padding: 1rem 0 2.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 
-  ul li,
-  ol li,
-  p {
-    padding: 1em 0;
-    line-height: 1.5em;
-    font-size: 18px;
+  .meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    color: var(--muted);
+    font-size: 0.82rem;
   }
 
-  code {
-    color: #f9a825;
+  .title {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.1;
+  }
+}
+
+.mainContainer {
+  p,
+  ul li,
+  ol li {
+    line-height: 1.75;
+    font-size: 1.08rem;
+    color: var(--fg);
+  }
+
+  p {
+    margin: 1.15rem 0;
   }
 
   ol,
   ul {
-    padding-left: 1em;
+    margin: 1.15rem 0;
+    padding-left: 1.4rem;
   }
-  img[alt="DOM Classes hierarchy"] {
-    background: #fff;
+
+  li {
+    margin: 0.4rem 0;
   }
-  ul li,
-  ol li {
-    list-style-position: inside;
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ol > li {
+    list-style-type: decimal;
   }
 
   ol li p {
     display: inline;
   }
 
-  ul > li {
-    list-style-type: disc;
-  }
-  ol > li {
-    list-style-type: decimal;
-  }
-
   h2 {
-    font-size: 28px;
-    padding: 4em 0 1em 0;
+    font-size: 1.6rem;
+    margin: 2.75rem 0 1rem;
   }
-}
 
-.titleContainer {
-  padding: 2em 0;
+  h3 {
+    font-size: 1.28rem;
+    margin: 2rem 0 0.75rem;
+  }
 
-  .title {
-    font-size: 32px;
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  img {
+    margin: 1.75rem auto;
+    border: 1px solid var(--rule);
+  }
+
+  img[alt="DOM Classes hierarchy"] {
+    background: #fff;
   }
 }

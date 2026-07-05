@@ -1,10 +1,5 @@
 import { LayoutHeader } from "@/components/LayoutHeader";
-import { IBM_Plex_Sans } from "next/font/google";
-const plexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
+import { fontClassName } from "@/app/fonts";
 
 export default function AboutLayout({
   children,
@@ -12,7 +7,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={plexSans.className}>
+    <html lang="en" className={fontClassName}>
       <body>
         <LayoutHeader showProfilePicture={false} />
         {children}

@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import "../reset.scss";
 import "../globals.scss";
-import { IBM_Plex_Sans } from "next/font/google";
 import { LayoutHeader } from "@/components/LayoutHeader";
-
-const plexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
+import { fontClassName } from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: "Ajay Poshak's Blog",
@@ -21,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plexSans.className}>
+    <html lang="en" className={fontClassName}>
       <title>Ajay Poshak&apos;s blog</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />

@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { notFound } from "next/navigation";
-import { extractMetadata } from "@/app/utils";
+import { extractMetadata, readingTime } from "@/app/utils";
 import { DateTime } from "@/components/DateTime";
 
 export default function Article({ params }: { params: { id: string } }) {
@@ -25,9 +25,13 @@ export default function Article({ params }: { params: { id: string } }) {
     <main>
       <section className={styles.mainContainer}>
         <header className={styles.titleContainer}>
-          {metadata?.publishedAt ? (
-            <DateTime>{metadata.publishedAt}</DateTime>
-          ) : null}
+          <div className={styles.meta}>
+            {metadata?.publishedAt ? (
+              <DateTime>{metadata.publishedAt}</DateTime>
+            ) : null}
+            <span aria-hidden="true">·</span>
+            <span>{readingTime(actualContent)}</span>
+          </div>
           {metadata?.title ? (
             <h1 className={styles.title}>{metadata.title}</h1>
           ) : null}
@@ -43,6 +47,12 @@ export default function Article({ params }: { params: { id: string } }) {
                   language={match[1]}
                   style={oneDark}
                   showLineNumbers
+                  customStyle={{
+                    margin: "1.75rem 0",
+                    borderRadius: "10px",
+                    fontSize: "0.88rem",
+                    border: "1px solid var(--rule)",
+                  }}
                 >
                   {String(children).replace(/\n$/, "")}
                 </SyntaxHighlighter>
