@@ -21,23 +21,8 @@
   --code-bg: #1a1d27;
   --selection: rgba(122, 162, 255, 0.24);
 
-  color-scheme: dark light;
-}
-
-// Quiet — light (for visitors whose OS prefers light)
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #fbfbfc;
-    --surface: #f3f4f7;
-    --fg: #16181d;
-    --muted: #5f6675;
-    --faint: #99a0af;
-    --accent: #2f5fe0;
-    --accent-strong: #1e46b8;
-    --rule: #e6e8ee;
-    --code-bg: #f1f2f6;
-    --selection: rgba(47, 95, 224, 0.15);
-  }
+  // Quiet is committed to dark — do not follow the OS light preference.
+  color-scheme: dark;
 }
 
 html {
