@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import styles from "./page.module.scss";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Ajay Poshak is a Lead Engineer at HackerRank, interested in user interfaces, developer tooling, and databases.",
+  alternates: { canonical: "/about" },
+};
+
 export default function About() {
   return (
     <section className={styles.aboutContainer}>

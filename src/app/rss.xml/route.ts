@@ -17,8 +17,8 @@ export async function GET() {
   articlesMetadata.forEach((article) => {
     feed.item({
       title: article.metadata.title,
-      description: article.metadata.subtitle || '',
-      url: `https://www.ajayposhak.in/articles/${article.fileNameWithoutExtension.toLowerCase()}`,
+      description: article.metadata.subtitle || "",
+      url: `https://www.ajayposhak.in/articles/${article.fileNameWithoutExtension}`,
       author: "Ajay Poshak",
       date: article.metadata.publishedAt,
     });

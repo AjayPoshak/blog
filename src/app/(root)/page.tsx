@@ -7,31 +7,33 @@ export default function Home() {
   const articlesInformation = buildMetadata();
   return (
     <main className={styles.main}>
-      <ul className={styles.listingContainer}>
+      <ul className={styles.list}>
         {articlesInformation.map((value, index) => (
-          <li className={styles.listItem} key={index}>
-            <div className={styles.subtitleContainer}>
-              {value?.metadata?.publishedAt ? (
-                <DateTime>{value.metadata.publishedAt}</DateTime>
-              ) : null}
-              {value?.metadata?.readingTime ? (
-                <p>{value.metadata.readingTime}</p>
-              ) : null}
-            </div>
-
-            {value?.metadata?.title ? (
-              <div>
-                <Link
-                  className={styles.title}
-                  href={`/articles/${value?.fileNameWithoutExtension}`}
-                >
-                  <h2>{value?.metadata.title}</h2>
-                </Link>
+          <li className={styles.item} key={index}>
+            <Link
+              className={styles.link}
+              href={`/articles/${value?.fileNameWithoutExtension}`}
+            >
+              <div className={styles.meta}>
+                {value?.metadata?.publishedAt ? (
+                  <DateTime>{value.metadata.publishedAt}</DateTime>
+                ) : null}
+                {value?.metadata?.readingTime ? (
+                  <span aria-hidden="true">·</span>
+                ) : null}
+                {value?.metadata?.readingTime ? (
+                  <span>{value.metadata.readingTime}</span>
+                ) : null}
               </div>
-            ) : null}
-            {value?.metadata?.subtitle ? (
-              <p>{value.metadata.subtitle}</p>
-            ) : null}
+
+              {value?.metadata?.title ? (
+                <h2 className={styles.title}>{value.metadata.title}</h2>
+              ) : null}
+
+              {value?.metadata?.subtitle ? (
+                <p className={styles.sub}>{value.metadata.subtitle}</p>
+              ) : null}
+            </Link>
           </li>
         ))}
       </ul>

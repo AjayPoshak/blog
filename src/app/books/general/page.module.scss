@@ -1,11 +1,17 @@
 .generalBooksContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  text-align: center;
+  min-height: 60vh;
+  gap: 0.75rem;
 
   h1 {
-    font-size: 24px;
-    padding-bottom: 2em;
+    font-size: 1.6rem;
+  }
+
+  p {
+    color: var(--muted);
   }
 }

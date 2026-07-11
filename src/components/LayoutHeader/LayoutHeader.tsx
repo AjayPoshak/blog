@@ -1,7 +1,5 @@
 import Link from "next/link";
 import style from "./LayoutHeader.module.scss";
-import "../../app/reset.scss";
-import "../../app/globals.scss";
 
 export function LayoutHeader({
   showProfilePicture = true,
@@ -15,6 +13,7 @@ export function LayoutHeader({
           <img
             className={style.profileImage}
             src="https://avatars3.githubusercontent.com/u/7375457?s=460&v=4"
+            alt="Ajay Poshak"
           />
         ) : null}
         <h1 className={style.heading}>Ajay Poshak</h1>
